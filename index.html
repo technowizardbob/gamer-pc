@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html style="font-size: 18px; font-family: Roboto, Arial, sans-serif;" lang="en">
+    <head>
+        <title>Guide for building a Game PC</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            select {
+                height: 28px;
+                padding-left: 3px;
+                padding-right: 6px;
+            }
+            fieldset {
+              background-color: #eeeeee;
+            }
+
+            legend {
+              background-color: gray;
+              color: white;
+              padding: 5px 10px;
+            }            
+            @keyframes blinkingText {
+                0%{     opacity: 1;    }
+                40%{    opacity: 0; }
+                60%{    opacity: 0; }
+                100%{   opacity: 1;    }
+            }
+
+            .blinking {
+                animation:blinkingText 2s reverse infinite;
+            }            
+        </style>
+        <script type="text/javascript">
+            function chrome_colors() {
+                var box = document.querySelectorAll("select");
+                var i;
+                for (i = 0; i < box.length; i++) {
+                    box[i].style = "background-color: lightblue; border-radius:4px; border:1px solid #AAAAAA;";
+                }
+            }
+            
+            document.addEventListener("DOMContentLoaded", function() {
+                var isChrome = /Chrome/.test(navigator.userAgent);
+                if (isChrome) {
+                    chrome_colors();
+                }
+            });
+        </script>
+    </head>
+    <body style="line-height: 3em;">
+            <form action="gamepc_results.php" method="get">
+            <fieldset>
+                <legend>Details for the Desktop PC Game Build</legend>
+                
+                <label for="funds">Funds:</label>
+                <select name="funds" id="funds">
+                    <option value="0">Entry level</option>
+                    <option value="1" selected="selected">Mid level</option>
+                    <option value="2">Elite level</option>
+                    <optgroup label="----------"></optgroup>
+                    <option value="3">Every level</option>
+                </select>
+                <br/>
+                
+                <label for="os">Operating System:</label>
+                <select name="os" id="os">
+                    <option value="win">Windows</option>
+                    <option value="linux">Linux</option>
+                    <option value="other">Other</option>
+                </select>
+                <br/>
+
+                <label for="cpu">CPU Brand:</label>
+                <select name="cpu" id="cpu">
+                    <option value="default">Recommend it for me</option>
+                    <option value="amd">I like AMD</option>
+                    <option value="intel">I want Intel</option>
+                </select>
+                <br/>
+
+                <label for="video">Video Card Brand:</label>
+                <select name="video" id="video">
+                    <option value="default">Recommend it for me</option>
+                    <option value="amd">I like AMD</option>
+                    <option value="nvidia">I want NVIDIA</option>
+                </select>
+                <br/>
+                
+                <label for="cad">I am a Computer Aided Designer (CAD) power user:</label>
+                <input type="checkbox" name="cad" id="cad">
+                <br/>
+                
+                <label for="stream">I want to stream my game on YouTube or Twich:</label>
+                <input type="checkbox" name="stream" id="stream">
+                <br/>
+                
+                <label for="coder">I am a web site designer or programmer:</label>
+                <input type="checkbox" name="coder" id="coder">
+                <br/>
+                
+                <label for="backups">I will want data backups:</label>
+                <input type="checkbox" name="backups" id="backups">
+                <br/>
+                
+                <font style="color: red;" class="blinking">--&gt;</font> &nbsp; <input type="submit" value="Click HERE to get Suggestions" style="background-color: lightgreen; border-radius:4px; border:1px solid #AAAAAA; font-size: 26px; padding-bottom: 2px;"> &nbsp; <font style="color: red;" class="blinking">&lt;--</font>
+
+            </fieldset>
+                
+            </form>
+    </body>
+</html>
